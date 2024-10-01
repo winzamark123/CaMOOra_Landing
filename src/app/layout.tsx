@@ -1,10 +1,7 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/ui/theme-provider';
 import NavBar from '@/components/navbar';
 import './globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className="overflow-x-hidden">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -26,7 +23,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <NavBar />
-          {children}
+          <div className="flex flex-col items-center justify-center overflow-hidden">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

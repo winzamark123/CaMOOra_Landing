@@ -6,7 +6,7 @@ import Logo from '@public/logo.svg';
 
 export default function NavBar() {
   return (
-    <main className="h-30 flex w-full justify-between p-8">
+    <main className="h-30 flex w-full justify-between p-4">
       <div className="p-4">
         <Link href="/">
           <Image src={Logo} alt="Camoora Logo" width={80} height={80}></Image>

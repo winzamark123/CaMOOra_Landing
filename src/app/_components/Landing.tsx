@@ -7,7 +7,7 @@ import HomePageDark from '@public/home-page-dark.png';
 
 export default function Landing() {
   return (
-    <main className="">
+    <main>
       <ContainerScroll
         titleComponent={
           <>

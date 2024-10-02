@@ -5,10 +5,11 @@
 
 @font-face {
   font-family: 'Espressonal';
-  src: url('/fonts/Espressonal/Espressonal.otf') format('otf');
+  src: url('/fonts/Espressonal/Espressonal.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
+
 
 @font-face {
   font-family: 'Roboto';

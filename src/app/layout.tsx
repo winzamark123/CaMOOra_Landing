@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="overflow-x-hidden">
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -23,7 +23,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <NavBar />
-          <div className="flex flex-col items-center justify-center overflow-hidden">
+          <div className="flex flex-col items-center justify-center overflow-x-hidden">
             {children}
           </div>
         </ThemeProvider>

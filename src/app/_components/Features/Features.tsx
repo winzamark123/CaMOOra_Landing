@@ -1,4 +1,4 @@
-import { roles } from './Features/Roles';
+import { roles } from './Roles';
 import Image from 'next/image';
 
 interface FeaturesProps {
@@ -11,9 +11,9 @@ export default function Features({ roleToggle }: FeaturesProps) {
   if (!role) return null;
 
   return (
-    <main className="flex w-full flex-col border-t-2">
-      <div className="flex">
-        <div className="flex w-1/2 flex-col gap-4 border-b-2 border-r-2 p-14">
+    <main className="flex w-full flex-col border-t-2 px-24">
+      <div className="flex w-full">
+        <div className="flex w-1/2 flex-col gap-4 border-b-2 border-r-2 p-10">
           <h3 className="text-xl font-bold">
             {role?.role_feature_items[0].title}
           </h3>

@@ -38,7 +38,7 @@ export default function Landing() {
           alt="hero"
           height={820}
           width={1500}
-          className="dark:hidden mx-auto rounded-2xl object-cover h-full object-left-top"
+          className="mx-auto h-full rounded-2xl object-cover object-left-top dark:hidden"
           draggable={false}
         />
         <Image
@@ -46,7 +46,7 @@ export default function Landing() {
           alt="hero"
           height={820}
           width={1500}
-          className="hidden dark:flex mx-auto rounded-2xl object-cover h-full object-left-top"
+          className="mx-auto hidden h-full rounded-2xl object-cover object-left-top dark:flex"
           draggable={false}
         />
       </ContainerScroll>

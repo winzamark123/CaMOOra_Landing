@@ -20,10 +20,10 @@ export default function Selection({
         <h1 className="text-6xl">Are you a...</h1>
         <div className="flex w-full justify-end gap-8 p-8">
           {roleToggle === 0 && (
-            <h2 className="text-4xl text-yellow-400">{roles[roleToggle]}</h2>
+            <h2 className="text-5xl text-yellow-400">{roles[roleToggle]}</h2>
           )}
           {roleToggle === 1 && (
-            <h2 className="text-4xl text-blue-800">{roles[roleToggle]}</h2>
+            <h2 className="text-5xl text-blue-800">{roles[roleToggle]}</h2>
           )}
           <Switch
             checked={roleToggle === 1}

@@ -18,6 +18,10 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        roboto: ['roboto', 'sans-serif'],
+        espressonal: ['espressonal'],
+      },
       padding: {
         '1/10': '10%',
         '1/20': '5%',

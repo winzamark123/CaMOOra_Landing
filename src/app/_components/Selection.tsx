@@ -16,9 +16,9 @@ export default function Selection({
 
   return (
     <main className="flex flex-col p-24">
-      <div className="w-1/3 flex flex-col font-espressonal">
+      <div className="flex w-1/3 flex-col font-espressonal">
         <h1 className="text-6xl">Are you a...</h1>
-        <div className="w-full justify-end flex gap-8 p-8">
+        <div className="flex w-full justify-end gap-8 p-8">
           {roleToggle === 0 && (
             <h2 className="text-4xl text-yellow-400">{roles[roleToggle]}</h2>
           )}

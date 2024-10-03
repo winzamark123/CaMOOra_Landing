@@ -33,6 +33,7 @@ const config: Config = {
         'screen-4/5': '80vh',
       },
       colors: {
+        primary_blue: '#013C5A',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

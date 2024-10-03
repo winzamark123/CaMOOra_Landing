@@ -17,7 +17,7 @@ const socials: ISocial[] = [
   {
     name: 'GitHub',
     icon: Github,
-    link: 'https://www.github.com/',
+    link: 'https://github.com/winzamark123/CaMOOra_Landing',
   },
 ];
 

@@ -1,5 +1,6 @@
 import { roles } from './Roles';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 interface FeaturesProps {
   roleToggle: number;
@@ -11,8 +12,18 @@ export default function Features({ roleToggle }: FeaturesProps) {
   if (!role) return null;
 
   return (
-    <main className="flex w-full flex-col border-t-2 px-24">
-      <div className="flex w-full">
+    <main className="flex w-full flex-col border-t-2 px-14">
+      <motion.div
+        key={roleToggle}
+        initial={{ x: '100vw' }}
+        animate={{ x: 0 }}
+        transition={{
+          type: 'spring',
+          damping: 15,
+          duration: 0.5,
+        }}
+        className="flex w-full"
+      >
         <div className="flex w-1/2 flex-col gap-4 border-b-2 border-r-2 p-10">
           <h3 className="text-xl font-bold">
             {role?.role_feature_items[0].title}
@@ -25,7 +36,7 @@ export default function Features({ roleToggle }: FeaturesProps) {
             ></Image>
           </div>
         </div>
-        <div className="flex w-1/2 flex-col gap-4 border-b-2 p-14">
+        <div className="flex w-1/2 flex-col gap-4 border-b-2 p-10">
           <h3 className="text-xl font-bold">
             {role?.role_feature_items[1].title}
           </h3>
@@ -37,8 +48,8 @@ export default function Features({ roleToggle }: FeaturesProps) {
             ></Image>
           </div>
         </div>
-      </div>
-      <div className="flex flex-col gap-4 border-b-2 p-14">
+      </motion.div>
+      <div className="flex flex-col gap-4 border-b-2 p-10">
         <h3 className="text-xl font-bold">
           {role?.role_feature_items[2].title}
         </h3>

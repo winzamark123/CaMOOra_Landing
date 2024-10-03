@@ -50,18 +50,18 @@ export default function MailingList() {
 
   return (
     <main className="w-full p-24">
-      <div className="w-1/2 flex flex-col gap-4 border border-black">
+      <div className="flex w-1/2 flex-col gap-4 border border-black">
         <h1 className="font-espressonal text-5xl">Join Our Mailing List </h1>
         <div className="flex flex-col">
           <p>CaMOOra is currently still under development...</p>
           <p>Sign up now to know our latest updates!</p>
         </div>
-        <div className="flex gap-4 text-4xl font-espressonal border border-red-300">
+        <div className="flex gap-4 border border-red-300 font-espressonal text-4xl">
           <div className="flex items-center border border-black">
             <Checkbox
               checked={studentChecked}
               onCheckedChange={handleStudentCheckedChange}
-              className="w-24 h-24"
+              className="h-24 w-24"
             />
             <h2 className="text-yellow-400">STUDENT</h2>
           </div>
@@ -69,7 +69,7 @@ export default function MailingList() {
             <Checkbox
               checked={photographerChecked}
               onCheckedChange={handlePhotographerCheckedChange}
-              className="w-24 h-24"
+              className="h-24 w-24"
             />
             <h2 className="text-blue-800">PHOTOGRAPHER</h2>
           </div>

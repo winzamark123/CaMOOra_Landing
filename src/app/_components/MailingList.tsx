@@ -30,12 +30,10 @@ export default function MailingList() {
 
   const handleStudentCheckedChange = () => {
     setStudentChecked(!studentChecked);
-    console.log('CHECKED STUDENT');
   };
 
   const handlePhotographerCheckedChange = () => {
     setPhotographerChecked(!photographerChecked);
-    console.log('CHECKED Photographer');
   };
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -77,9 +75,9 @@ export default function MailingList() {
             <h2 className="text-blue-800">PHOTOGRAPHER</h2>
           </div>
         </div>
-        <div className="w-1/3">
+        <div className="w-1/2">
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 ">
               <FormField
                 control={form.control}
                 name="email"
@@ -92,7 +90,7 @@ export default function MailingList() {
                   </FormItem>
                 )}
               />
-              <Button className="bg-blue-900" type="submit">
+              <Button className="bg-blue-900 hover:bg-yellow-300" type="submit">
                 <ArrowRight />
               </Button>
             </form>

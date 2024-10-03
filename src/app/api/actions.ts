@@ -37,7 +37,7 @@ export async function addEmail({
     if (existingEmail) {
       console.log('Email Already Exists');
       return {
-        status: 500,
+        status: 400,
         message: 'Email already exists',
       };
     }

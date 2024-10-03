@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { ThemeProvider } from '@/components/ui/theme-provider';
 import NavBar from '@/components/navbar';
+import Footer from '@/components/footer';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export default function RootLayout({
           <div className="flex flex-col items-center justify-center overflow-x-hidden">
             {children}
           </div>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

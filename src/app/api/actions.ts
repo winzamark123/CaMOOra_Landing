@@ -7,10 +7,10 @@ const emailSchema = z.string().email({ message: 'Invalid email address' });
 
 export async function getMailCollection() {
   const db = await getDatabase();
-  return db.collection('mailing_list25');
+  return db.collection('mailing_list24');
 }
 
-interface emailParams {
+export interface emailObject {
   email: string;
   isStudent: boolean;
   isPhotographer: boolean;
@@ -20,7 +20,7 @@ export async function addEmail({
   email,
   isStudent,
   isPhotographer,
-}: emailParams) {
+}: emailObject) {
   // Validate the email using Zod
   const validation = emailSchema.safeParse(email);
   if (!validation.success) {

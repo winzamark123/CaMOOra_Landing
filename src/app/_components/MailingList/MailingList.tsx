@@ -1,5 +1,6 @@
 'use client';
 
+// import MailForm from './MailForm';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -19,6 +20,7 @@ import {
 } from '@/components/ui/form';
 import Polaroid from '@public/mailingList/Polaroid.svg';
 import Image from 'next/image';
+import { addEmail, type emailObject } from '../../api/actions';
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Invalid email address' }),
@@ -43,12 +45,23 @@ export default function MailingList() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values: Send it to the backend
     // ✅ This will be type-safe and validated.
     console.log(values);
     if (!studentChecked && !photographerChecked) {
       console.log('ERROR');
+    }
+
+    const userObject: emailObject = {
+      email: values.email,
+      isStudent: studentChecked,
+      isPhotographer: photographerChecked,
+    };
+    try {
+      await addEmail(userObject);
+    } catch (error) {
+      console.error('Error', error);
     }
   }
 
@@ -80,7 +93,10 @@ export default function MailingList() {
         </div>
         <div className="w-1/2">
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 ">
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="space-y-8 border border-black"
+            >
               <FormField
                 control={form.control}
                 name="email"

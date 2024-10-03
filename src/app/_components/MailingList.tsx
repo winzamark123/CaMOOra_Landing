@@ -47,6 +47,9 @@ export default function MailingList() {
     // Do something with the form values: Send it to the backend
     // ✅ This will be type-safe and validated.
     console.log(values);
+    if (!studentChecked && !photographerChecked) {
+      console.log('ERROR');
+    }
   }
 
   return (

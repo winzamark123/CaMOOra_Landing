@@ -1,4 +1,9 @@
-import { addEmail, type emailObject } from '@/app/api/actions';
+import { useEffect, useState } from 'react';
+import {
+  addEmail,
+  countPhotographers,
+  type emailObject,
+} from '@/app/api/actions';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -6,7 +11,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 import {
   Form,
@@ -28,6 +34,8 @@ const formSchema = z
   });
 
 export default function MailForm() {
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [photographerCount, setPhotographerCount] = useState<number | null>(0);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -36,6 +44,15 @@ export default function MailForm() {
       photographerChecked: false,
     },
   });
+
+  useEffect(() => {
+    async function fetchPhotographerCount() {
+      const response = await countPhotographers();
+      setPhotographerCount(response.data);
+    }
+
+    fetchPhotographerCount();
+  }, [isSuccess]);
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     const userObject: emailObject = {
@@ -49,7 +66,7 @@ export default function MailForm() {
 
       if (response.status == 200) {
         form.reset();
-        console.log('Success!');
+        setIsSuccess(true);
       } else {
         console.error(response.message);
       }
@@ -106,23 +123,53 @@ export default function MailForm() {
               )}
             />
           </div>
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <Input placeholder="Email" {...field} />
-                </FormControl>
-                <div className="font-espressonal">
-                  <FormMessage />
-                </div>
-              </FormItem>
-            )}
-          />
-          <Button className="bg-blue-900 hover:bg-yellow-300" type="submit">
-            <ArrowRight />
-          </Button>
+          <div className="flex gap-4 ">
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <div className="w-64">
+                      <Input placeholder="Email" {...field} />
+                    </div>
+                  </FormControl>
+                  <div className="font-espressonal">
+                    <FormMessage />
+                  </div>
+                </FormItem>
+              )}
+            />
+            <Button
+              className={
+                isSuccess
+                  ? 'z-10 bg-green-700'
+                  : 'z-10 bg-slate-900 hover:bg-green-900'
+              }
+              type="submit"
+            >
+              {isSuccess ? <Check /> : <ArrowRight />}
+            </Button>
+          </div>
+          <div className="flex w-1/2 gap-4 font-espressonal text-lg">
+            <p className="">Current Potential Photographers!</p>
+            <div className="flex text-4xl text-blue-800">
+              <p className="text-4xl ">#</p>
+              <motion.div
+                className="z-0"
+                key={photographerCount}
+                initial={{ y: '-7vh' }}
+                animate={{ y: 0 }}
+                transition={{
+                  type: 'spring',
+                  damping: 15,
+                  duration: 0.5,
+                }}
+              >
+                {photographerCount}
+              </motion.div>
+            </div>
+          </div>
         </form>
       </Form>
     </main>

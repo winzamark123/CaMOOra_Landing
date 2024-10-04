@@ -14,7 +14,7 @@ export default function MailingList() {
           <p>CaMOOra is currently still under development...</p>
           <p>Sign up now to know our latest updates!</p>
         </div>
-        <div className="w-1/2">
+        <div className="w-full">
           <MailForm />
         </div>
       </div>

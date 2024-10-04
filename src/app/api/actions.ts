@@ -55,3 +55,24 @@ export async function addEmail({
     };
   }
 }
+
+export async function countPhotographers() {
+  const mailCollection = await getMailCollection();
+  try {
+    const photographerCount = await mailCollection.countDocuments({
+      isPhotographer: true,
+    });
+    return {
+      data: photographerCount,
+      status: 200,
+      message: 'Success',
+    };
+  } catch (error) {
+    console.error('Error counting photographers:', error);
+    return {
+      data: null,
+      status: 500,
+      message: 'Error counting photographers',
+    };
+  }
+}

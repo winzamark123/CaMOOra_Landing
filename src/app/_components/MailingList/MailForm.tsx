@@ -143,8 +143,8 @@ export default function MailForm() {
             <Button
               className={
                 isSuccess
-                  ? 'z-10 bg-green-700'
-                  : 'z-10 bg-slate-900 hover:bg-green-900'
+                  ? 'z-10 bg-green-700 dark:bg-green-300'
+                  : 'z-10 bg-slate-900 hover:bg-green-900 dark:bg-slate-300 dark:hover:bg-green-400'
               }
               type="submit"
             >

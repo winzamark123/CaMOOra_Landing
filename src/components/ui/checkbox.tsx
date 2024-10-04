@@ -5,6 +5,8 @@ import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import Image from 'next/image';
 import CheckBox from '@public/mailingList/Check_Box.svg';
 import CheckBoxTicked from '@public/mailingList/Check_Box_Ticked.svg';
+import CheckBox_white from '@public/mailingList/Check_Box_white.svg';
+import CheckBoxTicked_white from '@public/mailingList/Check_Box_ticked_white.svg';
 
 import { cn } from '@/lib/utils';
 
@@ -26,9 +28,23 @@ const Checkbox = React.forwardRef<
       {...props}
     >
       {checked ? (
-        <Image src={CheckBoxTicked} alt="Checkbox ticked" fill />
+        <>
+          <div className="dark:hidden">
+            <Image src={CheckBoxTicked} alt="Checkbox ticked" fill />
+          </div>
+          <div className="hidden dark:flex">
+            <Image src={CheckBoxTicked_white} alt="Checkbox ticked" fill />
+          </div>
+        </>
       ) : (
-        <Image src={CheckBox} alt="Checkbox not ticked" fill />
+        <>
+          <div className="dark:hidden">
+            <Image src={CheckBox} alt="Checkbox" fill />
+          </div>
+          <div className="hidden dark:flex">
+            <Image src={CheckBox_white} alt="Checkbox " fill />
+          </div>
+        </>
       )}
     </CheckboxPrimitive.Root>
   );

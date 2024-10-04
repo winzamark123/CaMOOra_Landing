@@ -3,6 +3,7 @@
 import MailForm from './MailForm';
 
 import Polaroid from '@public/mailingList/Polaroid.svg';
+import Polaroid_white from '@public/mailingList/Polaroid_white.svg';
 import Image from 'next/image';
 
 export default function MailingList() {
@@ -19,7 +20,12 @@ export default function MailingList() {
         </div>
       </div>
       <div className="">
-        <Image src={Polaroid} alt="MooTo Polaroid" />
+        <div className="dark:hidden">
+          <Image src={Polaroid} alt="MooTo Polaroid" />
+        </div>
+        <div className="hidden dark:flex">
+          <Image src={Polaroid_white} alt="MooTo Polaroid" />
+        </div>
       </div>
     </main>
   );

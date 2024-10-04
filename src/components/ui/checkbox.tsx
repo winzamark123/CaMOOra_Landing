@@ -6,7 +6,7 @@ import Image from 'next/image';
 import CheckBox from '@public/mailingList/Check_Box.svg';
 import CheckBoxTicked from '@public/mailingList/Check_Box_Ticked.svg';
 import CheckBox_white from '@public/mailingList/Check_Box_white.svg';
-import CheckBoxTicked_white from '@public/mailingList/Check_Box_ticked_white.svg';
+import CheckBoxTicked_white from '@public/mailingList/Check_Box_Ticked_white.svg';
 
 import { cn } from '@/lib/utils';
 

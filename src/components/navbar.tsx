@@ -7,7 +7,7 @@ import MOO_white from '@public/MOO_white.svg';
 
 export default function NavBar() {
   return (
-    <main className="h-30 flex w-full justify-between p-4">
+    <main className="h-30 flex w-full justify-between p-4 ">
       <div className="p-4">
         <Link href="/">
           <div className="dark:hidden">

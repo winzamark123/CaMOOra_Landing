@@ -9,7 +9,7 @@ import Image from 'next/image';
 export default function MailingList() {
   return (
     <main className="flex w-full items-center justify-center p-36">
-      <div className="flex w-1/2 flex-col gap-4">
+      <div className="z-20 flex w-1/2 flex-col gap-4">
         <h1 className="font-espressonal text-5xl">Join Our Mailing List </h1>
         <div className="flex flex-col">
           <p>CaMOOra is currently still under development...</p>
@@ -19,7 +19,7 @@ export default function MailingList() {
           <MailForm />
         </div>
       </div>
-      <div className="">
+      <div className="z-10">
         <div className="dark:hidden">
           <Image src={Polaroid} alt="MooTo Polaroid" />
         </div>

@@ -3,9 +3,6 @@ import Image from 'next/image';
 import CaMOOra from '@public/name-black.svg';
 import CaMOOraDark from '@public/name-white.svg';
 import HomePage from '@public/home-page-light.png';
-import HomePageDark from '@public/home-page-dark.png';
-import MobilePage from '@public/mobile-page.png';
-import NewHomePage from '@public/new-home-page.png';
 import NewerMobilePage from '@public/newer-mobile-page.png';
 
 export default function Landing() {

@@ -83,7 +83,7 @@ export default function MailForm() {
           className="w-full space-y-8"
         >
           {/* Checkboxes */}
-          <div className="flex gap-4 font-espressonal text-4xl">
+          <div className="flex flex-col gap-4 font-espressonal text-4xl md:flex-row">
             <FormField
               control={form.control}
               name="studentChecked"
@@ -123,14 +123,14 @@ export default function MailForm() {
               )}
             />
           </div>
-          <div className="flex gap-4 ">
+          <div className="flex gap-4">
             <FormField
               control={form.control}
               name="email"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="max-w-64 flex-grow">
                   <FormControl>
-                    <div className="w-64">
+                    <div>
                       <Input placeholder="Email" {...field} />
                     </div>
                   </FormControl>

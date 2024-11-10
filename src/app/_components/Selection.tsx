@@ -15,16 +15,15 @@ export default function Selection({
   const roles = ['Student', 'Photographer'];
 
   return (
-    <main className="flex flex-col p-24">
-      <div className="flex w-1/3 flex-col font-espressonal">
-        <h1 className="text-6xl">Are you a...</h1>
-        <div className="flex w-fit justify-end gap-8 p-8">
-          {roleToggle === 0 && (
-            <h2 className="text-5xl text-yellow-400">{roles[roleToggle]}</h2>
-          )}
-          {roleToggle === 1 && (
-            <h2 className="text-5xl text-blue-800">{roles[roleToggle]}</h2>
-          )}
+    <main className="selection-prop md:p-18 flex  flex-col sm:p-12 lg:p-24">
+      <div className="flex flex-col font-espressonal">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl">Are you a...</h1>
+        <div className="flex w-fit flex-col justify-end gap-8 py-8 pr-8 xs:flex-row">
+          <h2
+            className={`max-w-xs text-3xl sm:text-4xl md:text-5xl ${roleToggle === 0 ? 'text-yellow-400' : 'text-blue-800'}`}
+          >
+            {roles[roleToggle]}
+          </h2>
           <Switch
             checked={roleToggle === 1}
             onCheckedChange={(checked) => setRoleToggle(checked ? 1 : 0)}

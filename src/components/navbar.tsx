@@ -10,10 +10,10 @@ export default function NavBar() {
     <main className="h-30 flex w-full justify-between p-4 ">
       <div className="p-4">
         <Link href="/">
-          <div className="dark:hidden">
+          <div className="w-11 dark:hidden sm:w-14 md:w-auto">
             <Image src={MOO} alt="Camoora Logo" width={80} height={80}></Image>
           </div>
-          <div className="hidden dark:flex">
+          <div className="hidden w-11 dark:flex sm:w-14 md:w-auto">
             <Image
               src={MOO_white}
               alt="Camoora Logo"
@@ -23,7 +23,7 @@ export default function NavBar() {
           </div>
         </Link>
       </div>
-      <div className="hidden items-center justify-between gap-4 p-4 sm:flex">
+      <div className="flex items-center justify-between gap-4 p-4">
         <ModeToggle />
       </div>
     </main>

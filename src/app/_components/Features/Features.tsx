@@ -12,7 +12,7 @@ export default function Features({ roleToggle }: FeaturesProps) {
   if (!role) return null;
 
   return (
-    <main className="flex w-full flex-col border-t-2 px-14">
+    <main className="my-8 flex w-full flex-col border-t-2 md:my-0 md:px-14">
       <motion.div
         key={roleToggle}
         initial={{ x: '100vw' }}
@@ -22,9 +22,9 @@ export default function Features({ roleToggle }: FeaturesProps) {
           damping: 15,
           duration: 0.5,
         }}
-        className="flex w-full"
+        className="flex w-full flex-col md:flex-row"
       >
-        <div className="flex w-1/2 flex-col gap-4 border-b-2 border-r-2 p-10">
+        <div className="flex flex-col gap-8 border-b-2 p-5  sm:p-10 md:w-1/2 md:border-r-2">
           <h3 className="text-xl font-bold">
             {role?.role_feature_items[0].title}
           </h3>
@@ -36,7 +36,7 @@ export default function Features({ roleToggle }: FeaturesProps) {
             ></Image>
           </div>
         </div>
-        <div className="flex w-1/2 flex-col gap-4 border-b-2 p-10">
+        <div className="flex flex-col gap-8 border-b-2 p-5 sm:p-10 md:w-1/2">
           <h3 className="text-xl font-bold">
             {role?.role_feature_items[1].title}
           </h3>
@@ -49,7 +49,7 @@ export default function Features({ roleToggle }: FeaturesProps) {
           </div>
         </div>
       </motion.div>
-      <div className="flex flex-col gap-4 border-b-2 p-10">
+      <div className="flex flex-col gap-8 border-b-2 p-5 sm:p-10">
         <h3 className="text-xl font-bold">
           {role?.role_feature_items[2].title}
         </h3>

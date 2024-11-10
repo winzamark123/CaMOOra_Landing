@@ -18,6 +18,9 @@ const config: Config = {
       },
     },
     extend: {
+      screens: {
+        xs: '460px',
+      },
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
         espressonal: ['Espressonal'],
